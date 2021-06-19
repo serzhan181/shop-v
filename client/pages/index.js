@@ -4,7 +4,7 @@ import BaseLayout from '@/layout/base'
 export default function Home() {
   return (
     <BaseLayout>
-      <Button colorScheme='teal'>Hello world</Button>
+      <Button colorScheme='telegram'>Content here</Button>
     </BaseLayout>
   )
 }
