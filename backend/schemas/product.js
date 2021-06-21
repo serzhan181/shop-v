@@ -9,6 +9,25 @@ export default {
       type: 'string',
     },
     {
+      name: 'promoted',
+      title: 'Is it promoted?',
+      type: 'object',
+      fields: [
+        { name: 'previewImg', title: 'Preview Image', type: 'image' },
+        {
+          name: 'linkToProduct',
+          title: 'Link to the product',
+          type: 'reference',
+          to: [{ type: 'product' }],
+        },
+        {
+          name: 'isPromoted',
+          title: 'Is it promoted (boolean)?',
+          type: 'boolean',
+        },
+      ],
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -50,7 +69,7 @@ export default {
       name: 'vendor',
       title: 'Vendor',
       type: 'reference',
-      to: {type: 'vendor'},
+      to: { type: 'vendor' },
     },
     {
       name: 'blurb',
@@ -64,7 +83,7 @@ export default {
       of: [
         {
           type: 'reference',
-          to: {type: 'category'},
+          to: { type: 'category' },
         },
       ],
     },
