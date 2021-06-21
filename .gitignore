@@ -3,6 +3,8 @@
 backend/node_modules
 backend/.pnp
 .pnp.js
+node_modules/
+yarn.lock
 
 # testing
 backend/coverage
@@ -35,7 +37,7 @@ backend/yarn.lock
 
 ## Frontend
 # dependencies
-client/node_modules
+client/node_modules/
 client/.pnp
 client/.pnp.js
 

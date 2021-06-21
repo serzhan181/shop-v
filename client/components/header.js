@@ -32,7 +32,7 @@ export default function Header() {
   const { isOpen, onToggle } = useDisclosure()
 
   return (
-    <Box position='fixed' top='0' w='100%' height='12'>
+    <Box position='fixed' top='0' w='100%' height='sm'>
       <motion.div
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}
