@@ -1,8 +1,8 @@
 import BaseLayout from '@/layout/base'
 import Head from 'next/head'
-import Image from 'next/image'
-import { Container, Box, Flex, HStack } from '@chakra-ui/react'
+import { Container, Box, Flex } from '@chakra-ui/react'
 import PromoteCard from '@/components/promote-card'
+import Categories from '@/components/categories'
 import Slider from 'react-slick'
 
 import { products } from '../mockData/promotedProducts.js'
@@ -13,6 +13,18 @@ const sliderSettings = {
   speed: 500,
   slidesToShow: 2,
   slidesToScroll: 1,
+  autoplay: true,
+  centerMode: true,
+  pauseOnHover: true,
+  responsive: [
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
 }
 
 export default function Home({ pros, imageSource }) {
@@ -39,6 +51,12 @@ export default function Home({ pros, imageSource }) {
             </Slider>
           </Container>
         </Flex>
+
+        <Container maxW='container.xl'>
+          <Box mt='12'>
+            <Categories />
+          </Box>
+        </Container>
       </BaseLayout>
     </>
   )

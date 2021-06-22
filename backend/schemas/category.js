@@ -29,9 +29,14 @@ export default {
       of: [
         {
           type: 'reference',
-          to: [{type: 'category'}],
+          to: [{ type: 'category' }],
         },
       ],
+    },
+    {
+      name: 'icon',
+      title: 'Icon for your category',
+      type: 'image',
     },
   ],
 }
