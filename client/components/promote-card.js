@@ -1,4 +1,10 @@
 import { Flex, Box, Button, Heading, Text } from '@chakra-ui/react'
+import Image from 'next/image'
+import { getSanityImg } from '@/helpers/getSanityImg'
+
+const IMAGE = getSanityImg(
+  'image-3650330510b34f2e86ccba4b816680a2fe6061f1-1920x1280-jpg'
+)
 
 export default function PromoteCard() {
   return (
@@ -6,6 +12,8 @@ export default function PromoteCard() {
       justifyContent='space-between'
       w='lg'
       h='52'
+      minW='lg'
+      minH='52'
       bg='white'
       borderRadius='md'
       p='5'
@@ -31,7 +39,9 @@ export default function PromoteCard() {
           </Box>
         </Flex>
       </Flex>
-      <Box w='50%'>The product image</Box>
+      <Box bg='purple.500' position='relative' w='50%'>
+        <Image src={IMAGE} alt='product' objectFit='cover' layout='fill' />
+      </Box>
     </Flex>
   )
 }

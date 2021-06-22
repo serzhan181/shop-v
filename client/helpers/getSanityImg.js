@@ -1,6 +1,6 @@
 import imageUrlBuilder from '@sanity/image-url'
 
-export const useSanityImg = (
+export const getSanityImg = (
   image,
   projectId = 'gk4lw0hn',
   dataset = 'production'

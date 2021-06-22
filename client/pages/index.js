@@ -1,10 +1,19 @@
 import BaseLayout from '@/layout/base'
 import Head from 'next/head'
 import Image from 'next/image'
-import { Container, Button, Box, Flex, Center } from '@chakra-ui/react'
+import { Container, Box, Flex, HStack } from '@chakra-ui/react'
 import PromoteCard from '@/components/promote-card'
+import Slider from 'react-slick'
 
 import { products } from '../mockData/promotedProducts.js'
+
+const sliderSettings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 2,
+  slidesToScroll: 1,
+}
 
 export default function Home({ pros, imageSource }) {
   return (
@@ -20,8 +29,14 @@ export default function Home({ pros, imageSource }) {
           backgroundSize='cover'
           alignItems='center'
         >
-          <Container maxW='container.lg'>
-            <PromoteCard />
+          <Container maxW='container.xl'>
+            <Slider {...sliderSettings}>
+              <PromoteCard />
+              <PromoteCard />
+              <PromoteCard />
+              <PromoteCard />
+              <PromoteCard />
+            </Slider>
           </Container>
         </Flex>
       </BaseLayout>
