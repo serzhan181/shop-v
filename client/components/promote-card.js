@@ -12,8 +12,6 @@ export default function PromoteCard() {
       justifyContent='space-between'
       w='lg'
       h='52'
-      minW='lg'
-      minH='52'
       bg='white'
       borderRadius='md'
       p='5'
@@ -27,8 +25,8 @@ export default function PromoteCard() {
           position='relative'
         >
           <Box h='70%' overflow='hidden'>
-            <Heading size='lg'>
-              Really long and meaningful text Really long and meaningful text
+            <Heading size='md'>
+              Have time to buy! Discounts for the whole of July! 🔥🔥🔥
             </Heading>
           </Box>
 
@@ -39,8 +37,14 @@ export default function PromoteCard() {
           </Box>
         </Flex>
       </Flex>
-      <Box bg='purple.500' position='relative' w='50%'>
-        <Image src={IMAGE} alt='product' objectFit='cover' layout='fill' />
+      <Box
+        bg='purple.500'
+        position='relative'
+        w='50%'
+        borderRadius='md'
+        overflow='hidden'
+      >
+        <Image src={IMAGE} alt='product' layout='fill' />
       </Box>
     </Flex>
   )

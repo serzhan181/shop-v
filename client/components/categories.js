@@ -11,6 +11,16 @@ const sliderSettings = {
   slidesToScroll: 3,
   arrows: false,
   dots: true,
+
+  responsive: [
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 2,
+      },
+    },
+  ],
 }
 
 const IMAGE = getSanityImg(
