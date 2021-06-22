@@ -8,7 +8,9 @@ const sliderSettings = {
   infinite: true,
   speed: 500,
   slidesToShow: 9,
-  slidesToScroll: 1,
+  slidesToScroll: 3,
+  arrows: false,
+  dots: true,
 }
 
 const IMAGE = getSanityImg(
