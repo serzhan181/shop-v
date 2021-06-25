@@ -6,9 +6,10 @@ import Categories from '@/components/categories'
 import Slider from 'react-slick'
 
 import { products } from '../mockData/promotedProducts.js'
+import Cards from '@/components/cards'
 
 const sliderSettings = {
-  dots: true,
+  dots: false,
   infinite: true,
   speed: 500,
   slidesToShow: 2,
@@ -27,7 +28,7 @@ const sliderSettings = {
   ],
 }
 
-export default function Home({ pros, imageSource }) {
+export default function Home() {
   return (
     <>
       <Head>
@@ -55,6 +56,10 @@ export default function Home({ pros, imageSource }) {
         <Container maxW='container.xl'>
           <Box mt='12'>
             <Categories />
+          </Box>
+
+          <Box mt='20'>
+            <Cards />
           </Box>
         </Container>
       </BaseLayout>
