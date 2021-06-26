@@ -4,7 +4,7 @@ import { mockCategories } from '../mockData/categories'
 import { getSanityImg } from '@/helpers/getSanityImg'
 import Slider from 'react-slick'
 import Image from 'next/image'
-import { MotionBox } from '@/components/common/motion-box'
+import { MotionBox } from '@/components/common'
 
 const sliderSettings = {
   infinite: false,

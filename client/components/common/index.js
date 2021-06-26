@@ -1,3 +1,7 @@
-export { MotionBox } from './motion-box'
-export { MotionButton } from './motion-button'
-export { MotionFlex } from './motion-flex'
+export {
+  MotionBox,
+  MotionFlex,
+  MotionGrid,
+  MotionButton,
+} from './motion-components'
+export { Tag } from './tag'

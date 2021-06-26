@@ -2,16 +2,16 @@ import React from 'react'
 import { chakra, Box, Flex, useColorModeValue } from '@chakra-ui/react'
 import Image from 'next/image'
 import { getSanityImg } from '@/helpers/getSanityImg'
-import { MotionBox, MotionButton } from '@/components/common'
+import { MotionFlex, MotionButton } from '@/components/common'
+import { Tag } from '@/components/common'
 
-const IMAGE = getSanityImg(
-  'image-3650330510b34f2e86ccba4b816680a2fe6061f1-1920x1280-jpg'
-)
-
-export function Card({ variants }) {
+export function Card({ title, image, price, vendor, variants }) {
   return (
-    <MotionBox
+    <MotionFlex
+      justify='space-between'
+      direction='column'
       maxW='xs'
+      w='xs'
       bg={useColorModeValue('white', 'gray.800')}
       shadow='lg'
       rounded='lg'
@@ -19,27 +19,35 @@ export function Card({ variants }) {
       whileHover={{ y: -10, outline: '1px solid #c9c9c9' }}
       variants={variants}
     >
-      <Box px={4} py={2}>
-        <chakra.h1
-          color={useColorModeValue('gray.800', 'white')}
-          fontWeight='bold'
-          fontSize='3xl'
-          textTransform='uppercase'
-        >
-          Hamburger
-        </chakra.h1>
-        <chakra.p
-          mt={1}
-          fontSize='sm'
-          color={useColorModeValue('gray.600', 'gray.400')}
-        >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos
-          quidem sequi illum facere recusandae voluptatibus
-        </chakra.p>
+      <Box>
+        <Box px={4} py={2}>
+          <chakra.h1
+            color={useColorModeValue('gray.800', 'white')}
+            fontWeight='bold'
+            fontSize='3xl'
+            textTransform='uppercase'
+            isTruncated
+          >
+            {title}
+          </chakra.h1>
+          <Tag
+            mt={1}
+            fontSize='sm'
+            color={useColorModeValue('gray.600', 'gray.400')}
+            title={vendor.title}
+            externalLink={vendor.slug}
+            leftIcon={getSanityImg(vendor.logo)}
+          />
+        </Box>
       </Box>
 
       <Box h={48} w='full' fit='cover' mt={2} position='relative'>
-        <Image src={IMAGE} layout='fill' alt='NIKE AIR' />
+        <Image
+          src={getSanityImg(image)}
+          layout='fill'
+          objectFit='cover'
+          alt='NIKE AIR'
+        />
       </Box>
 
       <Flex
@@ -50,7 +58,7 @@ export function Card({ variants }) {
         roundedBottom='lg'
       >
         <chakra.h1 fontWeight='bold' fontSize='lg'>
-          $129
+          ${price}
         </chakra.h1>
         <MotionButton
           px={2}
@@ -68,6 +76,6 @@ export function Card({ variants }) {
           Add to 🛒
         </MotionButton>
       </Flex>
-    </MotionBox>
+    </MotionFlex>
   )
 }

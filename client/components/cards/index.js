@@ -1,6 +1,6 @@
 import { Card } from './card'
-import { MotionFlex } from '@/components/common'
-import { motion } from 'framer-motion'
+import { MotionGrid } from '@/components/common'
+import { PRODUCTS } from '../../mockData/products'
 
 const parentVariant = {
   show: {
@@ -24,10 +24,25 @@ const childrenVariants = {
 
 export default function Cards() {
   return (
-    <MotionFlex variants={parentVariant} initial='hidden' animate='show'>
-      <Card variants={childrenVariants} />
-      <Card variants={childrenVariants} />
-      <Card variants={childrenVariants} />
-    </MotionFlex>
+    <MotionGrid
+      bg='tomato'
+      sx={{ placeItems: 'center' }}
+      templateColumns='repeat(3, 1fr)'
+      gap={6}
+      variants={parentVariant}
+      initial='hidden'
+      animate='show'
+    >
+      {PRODUCTS.result.map((p) => (
+        <Card
+          key={p._id}
+          variants={childrenVariants}
+          title={p.title}
+          image={p.image}
+          price={p.price}
+          vendor={p.vendor}
+        />
+      ))}
+    </MotionGrid>
   )
 }
