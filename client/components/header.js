@@ -27,9 +27,13 @@ import {
   SearchIcon,
 } from '@chakra-ui/icons'
 import { motion } from 'framer-motion'
+import { useAuth } from '@/hooks/useAuth'
+import router from 'next/router'
 
 export default function Header() {
   const { isOpen, onToggle } = useDisclosure()
+
+  const { user } = useAuth()
 
   return (
     <Box position='fixed' top='0' zIndex='1000' w='100%' height='sm'>
@@ -96,28 +100,35 @@ export default function Header() {
                 </InputRightElement>
               </InputGroup>
             </FormControl>
-            <Button
-              as={'a'}
-              fontSize={'sm'}
-              fontWeight={400}
-              variant={'link'}
-              href={'#'}
-            >
-              Sign In
-            </Button>
-            <Button
-              display={{ base: 'none', md: 'inline-flex' }}
-              fontSize={'sm'}
-              fontWeight={600}
-              color={'white'}
-              bg={'blue.400'}
-              href={'#'}
-              _hover={{
-                bg: 'blue.300',
-              }}
-            >
-              Sign Up
-            </Button>
+            {user ? (
+              <Button>{user.id}</Button>
+            ) : (
+              <>
+                {' '}
+                <Button
+                  as={'a'}
+                  fontSize={'sm'}
+                  fontWeight={400}
+                  variant={'link'}
+                  href={'#'}
+                >
+                  Sign In
+                </Button>
+                <Button
+                  display={{ base: 'none', md: 'inline-flex' }}
+                  fontSize={'sm'}
+                  fontWeight={600}
+                  color={'white'}
+                  bg={'blue.400'}
+                  href={'#'}
+                  _hover={{
+                    bg: 'blue.300',
+                  }}
+                >
+                  Sign Up
+                </Button>
+              </>
+            )}
           </Stack>
         </Flex>
       </motion.div>
