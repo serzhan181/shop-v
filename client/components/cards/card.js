@@ -5,7 +5,7 @@ import { getSanityImg } from '@/helpers/getSanityImg'
 import { MotionFlex, MotionButton } from '@/components/common'
 import { Tag } from '@/components/common'
 
-export function Card({ title, image, price, vendor, variants }) {
+export function Card({ title, image, price, vendor }) {
   return (
     <MotionFlex
       justify='space-between'
@@ -17,9 +17,10 @@ export function Card({ title, image, price, vendor, variants }) {
       rounded='lg'
       boxShadow='xl'
       whileHover={{ y: -10, outline: '1px solid #c9c9c9' }}
-      variants={variants}
+      cursor='pointer'
+      zIndex='100'
     >
-      <Box>
+      <chakra.div>
         <Box px={4} py={2}>
           <chakra.h1
             color={useColorModeValue('gray.800', 'white')}
@@ -39,16 +40,16 @@ export function Card({ title, image, price, vendor, variants }) {
             leftIcon={getSanityImg(vendor.logo)}
           />
         </Box>
-      </Box>
+      </chakra.div>
 
-      <Box h={48} w='full' fit='cover' mt={2} position='relative'>
+      <chakra.div h={48} w='full' mt={2} position='relative'>
         <Image
           src={getSanityImg(image)}
           layout='fill'
           objectFit='cover'
           alt='NIKE AIR'
         />
-      </Box>
+      </chakra.div>
 
       <Flex
         alignItems='center'
