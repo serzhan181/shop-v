@@ -46,7 +46,7 @@ export function Card({ title, image, price, vendor }) {
         <Image
           src={getSanityImg(image)}
           layout='fill'
-          objectFit='cover'
+          objectFit='contain'
           alt='NIKE AIR'
         />
       </chakra.div>

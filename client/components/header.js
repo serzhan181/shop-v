@@ -125,7 +125,7 @@ export default function Header() {
                     bg: 'blue.300',
                   }}
                 >
-                  Sign Up
+                  Sign up
                 </Button>
               </>
             )}
