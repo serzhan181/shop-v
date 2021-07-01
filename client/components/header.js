@@ -28,7 +28,7 @@ import {
 } from '@chakra-ui/icons'
 import { motion } from 'framer-motion'
 import { useAuth } from '@/hooks/useAuth'
-import router from 'next/router'
+import { CartIconButton } from '@/components/cart/cart-icon-button'
 
 export default function Header() {
   const { isOpen, onToggle } = useDisclosure()
@@ -100,6 +100,7 @@ export default function Header() {
                 </InputRightElement>
               </InputGroup>
             </FormControl>
+            <CartIconButton />
             {user ? (
               <Button>{user.id}</Button>
             ) : (
