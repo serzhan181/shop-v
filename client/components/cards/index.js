@@ -16,6 +16,7 @@ export default function Cards() {
           image={p.image}
           price={p.price}
           vendor={p.vendor}
+          id={p._id}
         />
       ))}
     </Grid>
