@@ -1,825 +1,0 @@
-[1mdiff --git a/README.md b/README.md[m
-[1mindex 7f3862a..2130713 100644[m
-[1m--- a/README.md[m
-[1m+++ b/README.md[m
-[36m@@ -1 +1 @@[m
-[31m-## E-commerce app.[m
-[32m+[m[32m# E-commerce app.[m
-\ No newline at end of file[m
-[1mdiff --git a/client/components/cards/card.js b/client/components/cards/card.js[m
-[1mindex b97b3d4..29bb1c7 100644[m
-[1m--- a/client/components/cards/card.js[m
-[1m+++ b/client/components/cards/card.js[m
-[36m@@ -1,82 +1,82 @@[m
-[31m-import React from 'react'[m
-[31m-import { chakra, Box, Flex, useColorModeValue } from '@chakra-ui/react'[m
-[31m-import Image from 'next/image'[m
-[31m-import { getSanityImg } from '@/helpers/getSanityImg'[m
-[31m-import { MotionFlex, MotionButton } from '@/components/common'[m
-[31m-import { Tag } from '@/components/common'[m
-[31m-[m
-[31m-export function Card({ title, image, price, vendor }) {[m
-[31m-  return ([m
-[31m-    <MotionFlex[m
-[31m-      justify='space-between'[m
-[31m-      direction='column'[m
-[31m-      maxW='xs'[m
-[31m-      w='xs'[m
-[31m-      bg={useColorModeValue('white', 'gray.800')}[m
-[31m-      shadow='lg'[m
-[31m-      rounded='lg'[m
-[31m-      boxShadow='xl'[m
-[31m-      whileHover={{ y: -10, outline: '1px solid #c9c9c9' }}[m
-[31m-      cursor='pointer'[m
-[31m-      zIndex='100'[m
-[31m-    >[m
-[31m-      <chakra.div>[m
-[31m-        <Box px={4} py={2}>[m
-[31m-          <chakra.h1[m
-[31m-            color={useColorModeValue('gray.800', 'white')}[m
-[31m-            fontWeight='bold'[m
-[31m-            fontSize='3xl'[m
-[31m-            textTransform='uppercase'[m
-[31m-            isTruncated[m
-[31m-          >[m
-[31m-            {title}[m
-[31m-          </chakra.h1>[m
-[31m-          <Tag[m
-[31m-            mt={1}[m
-[31m-            fontSize='sm'[m
-[31m-            color={useColorModeValue('gray.600', 'gray.400')}[m
-[31m-            title={vendor.title}[m
-[31m-            externalLink={vendor.slug}[m
-[31m-            leftIcon={getSanityImg(vendor.logo)}[m
-[31m-          />[m
-[31m-        </Box>[m
-[31m-      </chakra.div>[m
-[31m-[m
-[31m-      <chakra.div h={48} w='full' mt={2} position='relative'>[m
-[31m-        <Image[m
-[31m-          src={getSanityImg(image)}[m
-[31m-          layout='fill'[m
-[31m-          objectFit='cover'[m
-[31m-          alt='NIKE AIR'[m
-[31m-        />[m
-[31m-      </chakra.div>[m
-[31m-[m
-[31m-      <Flex[m
-[31m-        alignItems='center'[m
-[31m-        justifyContent='space-between'[m
-[31m-        px={4}[m
-[31m-        py={2}[m
-[31m-        roundedBottom='lg'[m
-[31m-      >[m
-[31m-        <chakra.h1 fontWeight='bold' fontSize='lg'>[m
-[31m-          ${price}[m
-[31m-        </chakra.h1>[m
-[31m-        <MotionButton[m
-[31m-          px={2}[m
-[31m-          py={1}[m
-[31m-          bg='gray.200'[m
-[31m-          fontSize='xs'[m
-[31m-          color='gray.900'[m
-[31m-          fontWeight='bold'[m
-[31m-          rounded='md'[m
-[31m-          whileHover={{[m
-[31m-            backgroundColor: '#CBD5E0',[m
-[31m-          }}[m
-[31m-          whileTap={{ scale: 1.05 }}[m
-[31m-        >[m
-[31m-          Add to 🛒[m
-[31m-        </MotionButton>[m
-[31m-      </Flex>[m
-[31m-    </MotionFlex>[m
-[31m-  )[m
-[31m-}[m
-[32m+[m[32mimport React from 'react'[m[41m[m
-[32m+[m[32mimport { chakra, Box, Flex, useColorModeValue } from '@chakra-ui/react'[m[41m[m
-[32m+[m[32mimport Image from 'next/image'[m[41m[m
-[32m+[m[32mimport { getSanityImg } from '@/helpers/getSanityImg'[m[41m[m
-[32m+[m[32mimport { MotionFlex, MotionButton } from '@/components/common'[m[41m[m
-[32m+[m[32mimport { Tag } from '@/components/common'[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32mexport function Card({ title, image, price, vendor }) {[m[41m[m
-[32m+[m[32m  return ([m[41m[m
-[32m+[m[32m    <MotionFlex[m[41m[m
-[32m+[m[32m      justify='space-between'[m[41m[m
-[32m+[m[32m      direction='column'[m[41m[m
-[32m+[m[32m      maxW='xs'[m[41m[m
-[32m+[m[32m      w='xs'[m[41m[m
-[32m+[m[32m      bg={useColorModeValue('white', 'gray.800')}[m[41m[m
-[32m+[m[32m      shadow='lg'[m[41m[m
-[32m+[m[32m      rounded='lg'[m[41m[m
-[32m+[m[32m      boxShadow='xl'[m[41m[m
-[32m+[m[32m      whileHover={{ y: -10, outline: '1px solid #c9c9c9' }}[m[41m[m
-[32m+[m[32m      cursor='pointer'[m[41m[m
-[32m+[m[32m      zIndex='100'[m[41m[m
-[32m+[m[32m    >[m[41m[m
-[32m+[m[32m      <chakra.div>[m[41m[m
-[32m+[m[32m        <Box px={4} py={2}>[m[41m[m
-[32m+[m[32m          <chakra.h1[m[41m[m
-[32m+[m[32m            color={useColorModeValue('gray.800', 'white')}[m[41m[m
-[32m+[m[32m            fontWeight='bold'[m[41m[m
-[32m+[m[32m            fontSize='3xl'[m[41m[m
-[32m+[m[32m            textTransform='uppercase'[m[41m[m
-[32m+[m[32m            isTruncated[m[41m[m
-[32m+[m[32m          >[m[41m[m
-[32m+[m[32m            {title}[m[41m[m
-[32m+[m[32m          </chakra.h1>[m[41m[m
-[32m+[m[32m          <Tag[m[41m[m
-[32m+[m[32m            mt={1}[m[41m[m
-[32m+[m[32m            fontSize='sm'[m[41m[m
-[32m+[m[32m            color={useColorModeValue('gray.600', 'gray.400')}[m[41m[m
-[32m+[m[32m            title={vendor.title}[m[41m[m
-[32m+[m[32m            externalLink={vendor.slug}[m[41m[m
-[32m+[m[32m            leftIcon={getSanityImg(vendor.logo)}[m[41m[m
-[32m+[m[32m          />[m[41m[m
-[32m+[m[32m        </Box>[m[41m[m
-[32m+[m[32m      </chakra.div>[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m      <chakra.div h={48} w='full' mt={2} position='relative'>[m[41m[m
-[32m+[m[32m        <Image[m[41m[m
-[32m+[m[32m          src={getSanityImg(image)}[m[41m[m
-[32m+[m[32m          layout='fill'[m[41m[m
-[32m+[m[32m          objectFit='contain'[m[41m[m
-[32m+[m[32m          alt='NIKE AIR'[m[41m[m
-[32m+[m[32m        />[m[41m[m
-[32m+[m[32m      </chakra.div>[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m      <Flex[m[41m[m
-[32m+[m[32m        alignItems='center'[m[41m[m
-[32m+[m[32m        justifyContent='space-between'[m[41m[m
-[32m+[m[32m        px={4}[m[41m[m
-[32m+[m[32m        py={2}[m[41m[m
-[32m+[m[32m        roundedBottom='lg'[m[41m[m
-[32m+[m[32m      >[m[41m[m
-[32m+[m[32m        <chakra.h1 fontWeight='bold' fontSize='lg'>[m[41m[m
-[32m+[m[32m          ${price}[m[41m[m
-[32m+[m[32m        </chakra.h1>[m[41m[m
-[32m+[m[32m        <MotionButton[m[41m[m
-[32m+[m[32m          px={2}[m[41m[m
-[32m+[m[32m          py={1}[m[41m[m
-[32m+[m[32m          bg='gray.200'[m[41m[m
-[32m+[m[32m          fontSize='xs'[m[41m[m
-[32m+[m[32m          color='gray.900'[m[41m[m
-[32m+[m[32m          fontWeight='bold'[m[41m[m
-[32m+[m[32m          rounded='md'[m[41m[m
-[32m+[m[32m          whileHover={{[m[41m[m
-[32m+[m[32m            backgroundColor: '#CBD5E0',[m[41m[m
-[32m+[m[32m          }}[m[41m[m
-[32m+[m[32m          whileTap={{ scale: 1.05 }}[m[41m[m
-[32m+[m[32m        >[m[41m[m
-[32m+[m[32m          Add to 🛒[m[41m[m
-[32m+[m[32m        </MotionButton>[m[41m[m
-[32m+[m[32m      </Flex>[m[41m[m
-[32m+[m[32m    </MotionFlex>[m[41m[m
-[32m+[m[32m  )[m[41m[m
-[32m+[m[32m}[m[41m[m
-[1mdiff --git a/client/components/header.js b/client/components/header.js[m
-[1mindex d93d083..4515f78 100644[m
-[1m--- a/client/components/header.js[m
-[1m+++ b/client/components/header.js[m
-[36m@@ -1,315 +1,315 @@[m
-[31m-import {[m
-[31m-  Box,[m
-[31m-  Flex,[m
-[31m-  Text,[m
-[31m-  IconButton,[m
-[31m-  Button,[m
-[31m-  Stack,[m
-[31m-  Collapse,[m
-[31m-  Icon,[m
-[31m-  Link,[m
-[31m-  Popover,[m
-[31m-  PopoverTrigger,[m
-[31m-  PopoverContent,[m
-[31m-  FormControl,[m
-[31m-  InputGroup,[m
-[31m-  InputRightElement,[m
-[31m-  Input,[m
-[31m-  useColorModeValue,[m
-[31m-  useBreakpointValue,[m
-[31m-  useDisclosure,[m
-[31m-} from '@chakra-ui/react'[m
-[31m-import {[m
-[31m-  HamburgerIcon,[m
-[31m-  CloseIcon,[m
-[31m-  ChevronDownIcon,[m
-[31m-  ChevronRightIcon,[m
-[31m-  SearchIcon,[m
-[31m-} from '@chakra-ui/icons'[m
-[31m-import { motion } from 'framer-motion'[m
-[31m-import { useAuth } from '@/hooks/useAuth'[m
-[31m-import router from 'next/router'[m
-[31m-[m
-[31m-export default function Header() {[m
-[31m-  const { isOpen, onToggle } = useDisclosure()[m
-[31m-[m
-[31m-  const { user } = useAuth()[m
-[31m-[m
-[31m-  return ([m
-[31m-    <Box position='fixed' top='0' zIndex='1000' w='100%' height='sm'>[m
-[31m-      <motion.div[m
-[31m-        initial={{ opacity: 0, y: -100 }}[m
-[31m-        animate={{ opacity: 1, y: 0 }}[m
-[31m-        transition={{ ease: 'easeInOut', duration: 0.6 }}[m
-[31m-      >[m
-[31m-        <Flex[m
-[31m-          bg={useColorModeValue('white', 'gray.800')}[m
-[31m-          color={useColorModeValue('gray.600', 'white')}[m
-[31m-          py={{ base: 2 }}[m
-[31m-          px={{ base: 4 }}[m
-[31m-          borderBottom={1}[m
-[31m-          borderStyle={'solid'}[m
-[31m-          borderColor={useColorModeValue('gray.200', 'gray.900')}[m
-[31m-          align={'center'}[m
-[31m-        >[m
-[31m-          <Flex[m
-[31m-            flex={{ base: 1, md: 'auto' }}[m
-[31m-            ml={{ base: -2 }}[m
-[31m-            display={{ base: 'flex', md: 'none' }}[m
-[31m-          >[m
-[31m-            <IconButton[m
-[31m-              onClick={onToggle}[m
-[31m-              icon={[m
-[31m-                isOpen ? ([m
-[31m-                  <CloseIcon w={3} h={3} />[m
-[31m-                ) : ([m
-[31m-                  <HamburgerIcon w={5} h={5} />[m
-[31m-                )[m
-[31m-              }[m
-[31m-              variant={'ghost'}[m
-[31m-              aria-label={'Toggle Navigation'}[m
-[31m-            />[m
-[31m-          </Flex>[m
-[31m-          <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>[m
-[31m-            <Text[m
-[31m-              textAlign={useBreakpointValue({ base: 'center', md: 'left' })}[m
-[31m-              fontFamily={'heading'}[m
-[31m-              color={useColorModeValue('gray.800', 'white')}[m
-[31m-            >[m
-[31m-              Logo[m
-[31m-            </Text>[m
-[31m-[m
-[31m-            <Flex display={{ base: 'none', md: 'flex' }} ml={10}>[m
-[31m-              <DesktopNav />[m
-[31m-            </Flex>[m
-[31m-          </Flex>[m
-[31m-[m
-[31m-          <Stack[m
-[31m-            flex={{ base: 1, md: 0 }}[m
-[31m-            justify={'flex-end'}[m
-[31m-            direction={'row'}[m
-[31m-            spacing={6}[m
-[31m-          >[m
-[31m-            <FormControl w='sm' display={{ base: 'none', md: 'initial' }}>[m
-[31m-              <InputGroup>[m
-[31m-                <Input placeholder='Start your search...' colorScheme='blue' />[m
-[31m-                <InputRightElement width='16'>[m
-[31m-                  <IconButton isRound size='sm'>[m
-[31m-                    <SearchIcon color='blue.500' />[m
-[31m-                  </IconButton>[m
-[31m-                </InputRightElement>[m
-[31m-              </InputGroup>[m
-[31m-            </FormControl>[m
-[31m-            {user ? ([m
-[31m-              <Button>{user.id}</Button>[m
-[31m-            ) : ([m
-[31m-              <>[m
-[31m-                {' '}[m
-[31m-                <Button[m
-[31m-                  as={'a'}[m
-[31m-                  fontSize={'sm'}[m
-[31m-                  fontWeight={400}[m
-[31m-                  variant={'link'}[m
-[31m-                  href={'#'}[m
-[31m-                >[m
-[31m-                  Sign In[m
-[31m-                </Button>[m
-[31m-                <Button[m
-[31m-                  display={{ base: 'none', md: 'inline-flex' }}[m
-[31m-                  fontSize={'sm'}[m
-[31m-                  fontWeight={600}[m
-[31m-                  color={'white'}[m
-[31m-                  bg={'blue.400'}[m
-[31m-                  href={'#'}[m
-[31m-                  _hover={{[m
-[31m-                    bg: 'blue.300',[m
-[31m-                  }}[m
-[31m-                >[m
-[31m-                  Sign Up[m
-[31m-                </Button>[m
-[31m-              </>[m
-[31m-            )}[m
-[31m-          </Stack>[m
-[31m-        </Flex>[m
-[31m-      </motion.div>[m
-[31m-      <Collapse in={isOpen} animateOpacity>[m
-[31m-        <MobileNav />[m
-[31m-      </Collapse>[m
-[31m-    </Box>[m
-[31m-  )[m
-[31m-}[m
-[31m-[m
-[31m-const DesktopNav = () => {[m
-[31m-  const linkColor = useColorModeValue('gray.600', 'gray.200')[m
-[31m-  const linkHoverColor = useColorModeValue('gray.800', 'white')[m
-[31m-  const popoverContentBgColor = useColorModeValue('white', 'gray.800')[m
-[31m-[m
-[31m-  return ([m
-[31m-    <Stack direction={'row'} spacing={4}>[m
-[31m-      {NAV_ITEMS.map((navItem) => ([m
-[31m-        <Box key={navItem.label}>[m
-[31m-          <Popover trigger={'hover'} placement={'bottom-start'}>[m
-[31m-            <PopoverTrigger>[m
-[31m-              <Link[m
-[31m-                p={2}[m
-[31m-                href={navItem.href ?? '#'}[m
-[31m-                fontSize={'sm'}[m
-[31m-                fontWeight={500}[m
-[31m-                color={linkColor}[m
-[31m-                _hover={{[m
-[31m-                  textDecoration: 'none',[m
-[31m-                  color: linkHoverColor,[m
-[31m-                }}[m
-[31m-              >[m
-[31m-                {navItem.label}[m
-[31m-              </Link>[m
-[31m-            </PopoverTrigger>[m
-[31m-[m
-[31m-            {navItem.children && ([m
-[31m-              <PopoverContent[m
-[31m-                border={0}[m
-[31m-                boxShadow={'xl'}[m
-[31m-                bg={popoverContentBgColor}[m
-[31m-                p={4}[m
-[31m-                rounded={'xl'}[m
-[31m-                minW={'sm'}[m
-[31m-              >[m
-[31m-                <Stack>[m
-[31m-                  {navItem.children.map((child) => ([m
-[31m-                    <DesktopSubNav key={child.label} {...child} />[m
-[31m-                  ))}[m
-[31m-                </Stack>[m
-[31m-              </PopoverContent>[m
-[31m-            )}[m
-[31m-          </Popover>[m
-[31m-        </Box>[m
-[31m-      ))}[m
-[31m-    </Stack>[m
-[31m-  )[m
-[31m-}[m
-[31m-[m
-[31m-const DesktopSubNav = ({ label, href, subLabel }) => {[m
-[31m-  return ([m
-[31m-    <Link[m
-[31m-      href={href}[m
-[31m-      role={'group'}[m
-[31m-      display={'block'}[m
-[31m-      p={2}[m
-[31m-      rounded={'md'}[m
-[31m-      _hover={{ bg: useColorModeValue('blue.50', 'gray.900') }}[m
-[31m-    >[m
-[31m-      <Stack direction={'row'} align={'center'}>[m
-[31m-        <Box>[m
-[31m-          <Text[m
-[31m-            transition={'all .3s ease'}[m
-[31m-            _groupHover={{ color: 'blue.400' }}[m
-[31m-            fontWeight={500}[m
-[31m-          >[m
-[31m-            {label}[m
-[31m-          </Text>[m
-[31m-          <Text fontSize={'sm'}>{subLabel}</Text>[m
-[31m-        </Box>[m
-[31m-        <Flex[m
-[31m-          transition={'all .3s ease'}[m
-[31m-          transform={'translateX(-10px)'}[m
-[31m-          opacity={0}[m
-[31m-          _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}[m
-[31m-          justify={'flex-end'}[m
-[31m-          align={'center'}[m
-[31m-          flex={1}[m
-[31m-        >[m
-[31m-          <Icon color={'blue.400'} w={5} h={5} as={ChevronRightIcon} />[m
-[31m-        </Flex>[m
-[31m-      </Stack>[m
-[31m-    </Link>[m
-[31m-  )[m
-[31m-}[m
-[31m-[m
-[31m-const MobileNav = () => {[m
-[31m-  return ([m
-[31m-    <Stack[m
-[31m-      bg={useColorModeValue('white', 'gray.800')}[m
-[31m-      p={4}[m
-[31m-      display={{ md: 'none' }}[m
-[31m-    >[m
-[31m-      {NAV_ITEMS.map((navItem) => ([m
-[31m-        <MobileNavItem key={navItem.label} {...navItem} />[m
-[31m-      ))}[m
-[31m-    </Stack>[m
-[31m-  )[m
-[31m-}[m
-[31m-[m
-[31m-const MobileNavItem = ({ label, children, href }) => {[m
-[31m-  const { isOpen, onToggle } = useDisclosure()[m
-[31m-[m
-[31m-  return ([m
-[31m-    <Stack spacing={4} onClick={children && onToggle}>[m
-[31m-      <Flex[m
-[31m-        py={2}[m
-[31m-        as={Link}[m
-[31m-        href={href ?? '#'}[m
-[31m-        justify={'space-between'}[m
-[31m-        align={'center'}[m
-[31m-        _hover={{[m
-[31m-          textDecoration: 'none',[m
-[31m-        }}[m
-[31m-      >[m
-[31m-        <Text[m
-[31m-          fontWeight={600}[m
-[31m-          color={useColorModeValue('gray.600', 'gray.200')}[m
-[31m-        >[m
-[31m-          {label}[m
-[31m-        </Text>[m
-[31m-        {children && ([m
-[31m-          <Icon[m
-[31m-            as={ChevronDownIcon}[m
-[31m-            transition={'all .25s ease-in-out'}[m
-[31m-            transform={isOpen ? 'rotate(180deg)' : ''}[m
-[31m-            w={6}[m
-[31m-            h={6}[m
-[31m-          />[m
-[31m-        )}[m
-[31m-      </Flex>[m
-[31m-[m
-[31m-      <Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' }}>[m
-[31m-        <Stack[m
-[31m-          mt={2}[m
-[31m-          pl={4}[m
-[31m-          borderLeft={1}[m
-[31m-          borderStyle={'solid'}[m
-[31m-          borderColor={useColorModeValue('gray.200', 'gray.700')}[m
-[31m-          align={'start'}[m
-[31m-        >[m
-[31m-          {children &&[m
-[31m-            children.map((child) => ([m
-[31m-              <Link key={child.label} py={2} href={child.href}>[m
-[31m-                {child.label}[m
-[31m-              </Link>[m
-[31m-            ))}[m
-[31m-        </Stack>[m
-[31m-      </Collapse>[m
-[31m-    </Stack>[m
-[31m-  )[m
-[31m-}[m
-[31m-[m
-[31m-const NAV_ITEMS = [[m
-[31m-  { label: 'Home', href: '/' },[m
-[31m-  { label: 'Products', href: '/products' },[m
-[31m-  { label: 'Vendors', href: '/vendors' },[m
-[31m-  {[m
-[31m-    label: 'Categories',[m
-[31m-[m
-[31m-    children: [[m
-[31m-      {[m
-[31m-        label: 'Category 1',[m
-[31m-        subLabel: 'the category one',[m
-[31m-        href: '#',[m
-[31m-      },[m
-[31m-      {[m
-[31m-        label: 'Category 2',[m
-[31m-        subLabel: 'the category two',[m
-[31m-        href: '#',[m
-[31m-      },[m
-[31m-    ],[m
-[31m-  },[m
-[31m-][m
-[32m+[m[32mimport {[m[41m[m
-[32m+[m[32m  Box,[m[41m[m
-[32m+[m[32m  Flex,[m[41m[m
-[32m+[m[32m  Text,[m[41m[m
-[32m+[m[32m  IconButton,[m[41m[m
-[32m+[m[32m  Button,[m[41m[m
-[32m+[m[32m  Stack,[m[41m[m
-[32m+[m[32m  Collapse,[m[41m[m
-[32m+[m[32m  Icon,[m[41m[m
-[32m+[m[32m  Link,[m[41m[m
-[32m+[m[32m  Popover,[m[41m[m
-[32m+[m[32m  PopoverTrigger,[m[41m[m
-[32m+[m[32m  PopoverContent,[m[41m[m
-[32m+[m[32m  FormControl,[m[41m[m
-[32m+[m[32m  InputGroup,[m[41m[m
-[32m+[m[32m  InputRightElement,[m[41m[m
-[32m+[m[32m  Input,[m[41m[m
-[32m+[m[32m  useColorModeValue,[m[41m[m
-[32m+[m[32m  useBreakpointValue,[m[41m[m
-[32m+[m[32m  useDisclosure,[m[41m[m
-[32m+[m[32m} from '@chakra-ui/react'[m[41m[m
-[32m+[m[32mimport {[m[41m[m
-[32m+[m[32m  HamburgerIcon,[m[41m[m
-[32m+[m[32m  CloseIcon,[m[41m[m
-[32m+[m[32m  ChevronDownIcon,[m[41m[m
-[32m+[m[32m  ChevronRightIcon,[m[41m[m
-[32m+[m[32m  SearchIcon,[m[41m[m
-[32m+[m[32m} from '@chakra-ui/icons'[m[41m[m
-[32m+[m[32mimport { motion } from 'framer-motion'[m[41m[m
-[32m+[m[32mimport { useAuth } from '@/hooks/useAuth'[m[41m[m
-[32m+[m[32mimport router from 'next/router'[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32mexport default function Header() {[m[41m[m
-[32m+[m[32m  const { isOpen, onToggle } = useDisclosure()[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m  const { user } = useAuth()[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m  return ([m[41m[m
-[32m+[m[32m    <Box position='fixed' top='0' zIndex='1000' w='100%' height='sm'>[m[41m[m
-[32m+[m[32m      <motion.div[m[41m[m
-[32m+[m[32m        initial={{ opacity: 0, y: -100 }}[m[41m[m
-[32m+[m[32m        animate={{ opacity: 1, y: 0 }}[m[41m[m
-[32m+[m[32m        transition={{ ease: 'easeInOut', duration: 0.6 }}[m[41m[m
-[32m+[m[32m      >[m[41m[m
-[32m+[m[32m        <Flex[m[41m[m
-[32m+[m[32m          bg={useColorModeValue('white', 'gray.800')}[m[41m[m
-[32m+[m[32m          color={useColorModeValue('gray.600', 'white')}[m[41m[m
-[32m+[m[32m          py={{ base: 2 }}[m[41m[m
-[32m+[m[32m          px={{ base: 4 }}[m[41m[m
-[32m+[m[32m          borderBottom={1}[m[41m[m
-[32m+[m[32m          borderStyle={'solid'}[m[41m[m
-[32m+[m[32m          borderColor={useColorModeValue('gray.200', 'gray.900')}[m[41m[m
-[32m+[m[32m          align={'center'}[m[41m[m
-[32m+[m[32m        >[m[41m[m
-[32m+[m[32m          <Flex[m[41m[m
-[32m+[m[32m            flex={{ base: 1, md: 'auto' }}[m[41m[m
-[32m+[m[32m            ml={{ base: -2 }}[m[41m[m
-[32m+[m[32m            display={{ base: 'flex', md: 'none' }}[m[41m[m
-[32m+[m[32m          >[m[41m[m
-[32m+[m[32m            <IconButton[m[41m[m
-[32m+[m[32m              onClick={onToggle}[m[41m[m
-[32m+[m[32m              icon={[m[41m[m
-[32m+[m[32m                isOpen ? ([m[41m[m
-[32m+[m[32m                  <CloseIcon w={3} h={3} />[m[41m[m
-[32m+[m[32m                ) : ([m[41m[m
-[32m+[m[32m                  <HamburgerIcon w={5} h={5} />[m[41m[m
-[32m+[m[32m                )[m[41m[m
-[32m+[m[32m              }[m[41m[m
-[32m+[m[32m              variant={'ghost'}[m[41m[m
-[32m+[m[32m              aria-label={'Toggle Navigation'}[m[41m[m
-[32m+[m[32m            />[m[41m[m
-[32m+[m[32m          </Flex>[m[41m[m
-[32m+[m[32m          <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>[m[41m[m
-[32m+[m[32m            <Text[m[41m[m
-[32m+[m[32m              textAlign={useBreakpointValue({ base: 'center', md: 'left' })}[m[41m[m
-[32m+[m[32m              fontFamily={'heading'}[m[41m[m
-[32m+[m[32m              color={useColorModeValue('gray.800', 'white')}[m[41m[m
-[32m+[m[32m            >[m[41m[m
-[32m+[m[32m              Logo[m[41m[m
-[32m+[m[32m            </Text>[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m            <Flex display={{ base: 'none', md: 'flex' }} ml={10}>[m[41m[m
-[32m+[m[32m              <DesktopNav />[m[41m[m
-[32m+[m[32m            </Flex>[m[41m[m
-[32m+[m[32m          </Flex>[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m          <Stack[m[41m[m
-[32m+[m[32m            flex={{ base: 1, md: 0 }}[m[41m[m
-[32m+[m[32m            justify={'flex-end'}[m[41m[m
-[32m+[m[32m            direction={'row'}[m[41m[m
-[32m+[m[32m            spacing={6}[m[41m[m
-[32m+[m[32m          >[m[41m[m
-[32m+[m[32m            <FormControl w='sm' display={{ base: 'none', md: 'initial' }}>[m[41m[m
-[32m+[m[32m              <InputGroup>[m[41m[m
-[32m+[m[32m                <Input placeholder='Start your search...' colorScheme='blue' />[m[41m[m
-[32m+[m[32m                <InputRightElement width='16'>[m[41m[m
-[32m+[m[32m                  <IconButton isRound size='sm'>[m[41m[m
-[32m+[m[32m                    <SearchIcon color='blue.500' />[m[41m[m
-[32m+[m[32m                  </IconButton>[m[41m[m
-[32m+[m[32m                </InputRightElement>[m[41m[m
-[32m+[m[32m              </InputGroup>[m[41m[m
-[32m+[m[32m            </FormControl>[m[41m[m
-[32m+[m[32m            {user ? ([m[41m[m
-[32m+[m[32m              <Button>{user.id}</Button>[m[41m[m
-[32m+[m[32m            ) : ([m[41m[m
-[32m+[m[32m              <>[m[41m[m
-[32m+[m[32m                {' '}[m[41m[m
-[32m+[m[32m                <Button[m[41m[m
-[32m+[m[32m                  as={'a'}[m[41m[m
-[32m+[m[32m                  fontSize={'sm'}[m[41m[m
-[32m+[m[32m                  fontWeight={400}[m[41m[m
-[32m+[m[32m                  variant={'link'}[m[41m[m
-[32m+[m[32m                  href={'#'}[m[41m[m
-[32m+[m[32m                >[m[41m[m
-[32m+[m[32m                  Sign In[m[41m[m
-[32m+[m[32m                </Button>[m[41m[m
-[32m+[m[32m                <Button[m[41m[m
-[32m+[m[32m                  display={{ base: 'none', md: 'inline-flex' }}[m[41m[m
-[32m+[m[32m                  fontSize={'sm'}[m[41m[m
-[32m+[m[32m                  fontWeight={600}[m[41m[m
-[32m+[m[32m                  color={'white'}[m[41m[m
-[32m+[m[32m                  bg={'blue.400'}[m[41m[m
-[32m+[m[32m                  href={'#'}[m[41m[m
-[32m+[m[32m                  _hover={{[m[41m[m
-[32m+[m[32m                    bg: 'blue.300',[m[41m[m
-[32m+[m[32m                  }}[m[41m[m
-[32m+[m[32m                >[m[41m[m
-[32m+[m[32m                  Sign up[m[41m[m
-[32m+[m[32m                </Button>[m[41m[m
-[32m+[m[32m              </>[m[41m[m
-[32m+[m[32m            )}[m[41m[m
-[32m+[m[32m          </Stack>[m[41m[m
-[32m+[m[32m        </Flex>[m[41m[m
-[32m+[m[32m      </motion.div>[m[41m[m
-[32m+[m[32m      <Collapse in={isOpen} animateOpacity>[m[41m[m
-[32m+[m[32m        <MobileNav />[m[41m[m
-[32m+[m[32m      </Collapse>[m[41m[m
-[32m+[m[32m    </Box>[m[41m[m
-[32m+[m[32m  )[m[41m[m
-[32m+[m[32m}[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32mconst DesktopNav = () => {[m[41m[m
-[32m+[m[32m  const linkColor = useColorModeValue('gray.600', 'gray.200')[m[41m[m
-[32m+[m[32m  const linkHoverColor = useColorModeValue('gray.800', 'white')[m[41m[m
-[32m+[m[32m  const popoverContentBgColor = useColorModeValue('white', 'gray.800')[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m  return ([m[41m[m
-[32m+[m[32m    <Stack direction={'row'} spacing={4}>[m[41m[m
-[32m+[m[32m      {NAV_ITEMS.map((navItem) => ([m[41m[m
-[32m+[m[32m        <Box key={navItem.label}>[m[41m[m
-[32m+[m[32m          <Popover trigger={'hover'} placement={'bottom-start'}>[m[41m[m
-[32m+[m[32m            <PopoverTrigger>[m[41m[m
-[32m+[m[32m              <Link[m[41m[m
-[32m+[m[32m                p={2}[m[41m[m
-[32m+[m[32m                href={navItem.href ?? '#'}[m[41m[m
-[32m+[m[32m                fontSize={'sm'}[m[41m[m
-[32m+[m[32m                fontWeight={500}[m[41m[m
-[32m+[m[32m                color={linkColor}[m[41m[m
-[32m+[m[32m                _hover={{[m[41m[m
-[32m+[m[32m                  textDecoration: 'none',[m[41m[m
-[32m+[m[32m                  color: linkHoverColor,[m[41m[m
-[32m+[m[32m                }}[m[41m[m
-[32m+[m[32m              >[m[41m[m
-[32m+[m[32m                {navItem.label}[m[41m[m
-[32m+[m[32m              </Link>[m[41m[m
-[32m+[m[32m            </PopoverTrigger>[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m            {navItem.children && ([m[41m[m
-[32m+[m[32m              <PopoverContent[m[41m[m
-[32m+[m[32m                border={0}[m[41m[m
-[32m+[m[32m                boxShadow={'xl'}[m[41m[m
-[32m+[m[32m                bg={popoverContentBgColor}[m[41m[m
-[32m+[m[32m                p={4}[m[41m[m
-[32m+[m[32m                rounded={'xl'}[m[41m[m
-[32m+[m[32m                minW={'sm'}[m[41m[m
-[32m+[m[32m              >[m[41m[m
-[32m+[m[32m                <Stack>[m[41m[m
-[32m+[m[32m                  {navItem.children.map((child) => ([m[41m[m
-[32m+[m[32m                    <DesktopSubNav key={child.label} {...child} />[m[41m[m
-[32m+[m[32m                  ))}[m[41m[m
-[32m+[m[32m                </Stack>[m[41m[m
-[32m+[m[32m              </PopoverContent>[m[41m[m
-[32m+[m[32m            )}[m[41m[m
-[32m+[m[32m          </Popover>[m[41m[m
-[32m+[m[32m        </Box>[m[41m[m
-[32m+[m[32m      ))}[m[41m[m
-[32m+[m[32m    </Stack>[m[41m[m
-[32m+[m[32m  )[m[41m[m
-[32m+[m[32m}[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32mconst DesktopSubNav = ({ label, href, subLabel }) => {[m[41m[m
-[32m+[m[32m  return ([m[41m[m
-[32m+[m[32m    <Link[m[41m[m
-[32m+[m[32m      href={href}[m[41m[m
-[32m+[m[32m      role={'group'}[m[41m[m
-[32m+[m[32m      display={'block'}[m[41m[m
-[32m+[m[32m      p={2}[m[41m[m
-[32m+[m[32m      rounded={'md'}[m[41m[m
-[32m+[m[32m      _hover={{ bg: useColorModeValue('blue.50', 'gray.900') }}[m[41m[m
-[32m+[m[32m    >[m[41m[m
-[32m+[m[32m      <Stack direction={'row'} align={'center'}>[m[41m[m
-[32m+[m[32m        <Box>[m[41m[m
-[32m+[m[32m          <Text[m[41m[m
-[32m+[m[32m            transition={'all .3s ease'}[m[41m[m
-[32m+[m[32m            _groupHover={{ color: 'blue.400' }}[m[41m[m
-[32m+[m[32m            fontWeight={500}[m[41m[m
-[32m+[m[32m          >[m[41m[m
-[32m+[m[32m            {label}[m[41m[m
-[32m+[m[32m          </Text>[m[41m[m
-[32m+[m[32m          <Text fontSize={'sm'}>{subLabel}</Text>[m[41m[m
-[32m+[m[32m        </Box>[m[41m[m
-[32m+[m[32m        <Flex[m[41m[m
-[32m+[m[32m          transition={'all .3s ease'}[m[41m[m
-[32m+[m[32m          transform={'translateX(-10px)'}[m[41m[m
-[32m+[m[32m          opacity={0}[m[41m[m
-[32m+[m[32m          _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}[m[41m[m
-[32m+[m[32m          justify={'flex-end'}[m[41m[m
-[32m+[m[32m          align={'center'}[m[41m[m
-[32m+[m[32m          flex={1}[m[41m[m
-[32m+[m[32m        >[m[41m[m
-[32m+[m[32m          <Icon color={'blue.400'} w={5} h={5} as={ChevronRightIcon} />[m[41m[m
-[32m+[m[32m        </Flex>[m[41m[m
-[32m+[m[32m      </Stack>[m[41m[m
-[32m+[m[32m    </Link>[m[41m[m
-[32m+[m[32m  )[m[41m[m
-[32m+[m[32m}[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32mconst MobileNav = () => {[m[41m[m
-[32m+[m[32m  return ([m[41m[m
-[32m+[m[32m    <Stack[m[41m[m
-[32m+[m[32m      bg={useColorModeValue('white', 'gray.800')}[m[41m[m
-[32m+[m[32m      p={4}[m[41m[m
-[32m+[m[32m      display={{ md: 'none' }}[m[41m[m
-[32m+[m[32m    >[m[41m[m
-[32m+[m[32m      {NAV_ITEMS.map((navItem) => ([m[41m[m
-[32m+[m[32m        <MobileNavItem key={navItem.label} {...navItem} />[m[41m[m
-[32m+[m[32m      ))}[m[41m[m
-[32m+[m[32m    </Stack>[m[41m[m
-[32m+[m[32m  )[m[41m[m
-[32m+[m[32m}[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32mconst MobileNavItem = ({ label, children, href }) => {[m[41m[m
-[32m+[m[32m  const { isOpen, onToggle } = useDisclosure()[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m  return ([m[41m[m
-[32m+[m[32m    <Stack spacing={4} onClick={children && onToggle}>[m[41m[m
-[32m+[m[32m      <Flex[m[41m[m
-[32m+[m[32m        py={2}[m[41m[m
-[32m+[m[32m        as={Link}[m[41m[m
-[32m+[m[32m        href={href ?? '#'}[m[41m[m
-[32m+[m[32m        justify={'space-between'}[m[41m[m
-[32m+[m[32m        align={'center'}[m[41m[m
-[32m+[m[32m        _hover={{[m[41m[m
-[32m+[m[32m          textDecoration: 'none',[m[41m[m
-[32m+[m[32m        }}[m[41m[m
-[32m+[m[32m      >[m[41m[m
-[32m+[m[32m        <Text[m[41m[m
-[32m+[m[32m          fontWeight={600}[m[41m[m
-[32m+[m[32m          color={useColorModeValue('gray.600', 'gray.200')}[m[41m[m
-[32m+[m[32m        >[m[41m[m
-[32m+[m[32m          {label}[m[41m[m
-[32m+[m[32m        </Text>[m[41m[m
-[32m+[m[32m        {children && ([m[41m[m
-[32m+[m[32m          <Icon[m[41m[m
-[32m+[m[32m            as={ChevronDownIcon}[m[41m[m
-[32m+[m[32m            transition={'all .25s ease-in-out'}[m[41m[m
-[32m+[m[32m            transform={isOpen ? 'rotate(180deg)' : ''}[m[41m[m
-[32m+[m[32m            w={6}[m[41m[m
-[32m+[m[32m            h={6}[m[41m[m
-[32m+[m[32m          />[m[41m[m
-[32m+[m[32m        )}[m[41m[m
-[32m+[m[32m      </Flex>[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m      <Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' }}>[m[41m[m
-[32m+[m[32m        <Stack[m[41m[m
-[32m+[m[32m          mt={2}[m[41m[m
-[32m+[m[32m          pl={4}[m[41m[m
-[32m+[m[32m          borderLeft={1}[m[41m[m
-[32m+[m[32m          borderStyle={'solid'}[m[41m[m
-[32m+[m[32m          borderColor={useColorModeValue('gray.200', 'gray.700')}[m[41m[m
-[32m+[m[32m          align={'start'}[m[41m[m
-[32m+[m[32m        >[m[41m[m
-[32m+[m[32m          {children &&[m[41m[m
-[32m+[m[32m            children.map((child) => ([m[41m[m
-[32m+[m[32m              <Link key={child.label} py={2} href={child.href}>[m[41m[m
-[32m+[m[32m                {child.label}[m[41m[m
-[32m+[m[32m              </Link>[m[41m[m
-[32m+[m[32m            ))}[m[41m[m
-[32m+[m[32m        </Stack>[m[41m[m
-[32m+[m[32m      </Collapse>[m[41m[m
-[32m+[m[32m    </Stack>[m[41m[m
-[32m+[m[32m  )[m[41m[m
-[32m+[m[32m}[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32mconst NAV_ITEMS = [[m[41m[m
-[32m+[m[32m  { label: 'Home', href: '/' },[m[41m[m
-[32m+[m[32m  { label: 'Products', href: '/products' },[m[41m[m
-[32m+[m[32m  { label: 'Vendors', href: '/vendors' },[m[41m[m
-[32m+[m[32m  {[m[41m[m
-[32m+[m[32m    label: 'Categories',[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m    children: [[m[41m[m
-[32m+[m[32m      {[m[41m[m
-[32m+[m[32m        label: 'Category 1',[m[41m[m
-[32m+[m[32m        subLabel: 'the category one',[m[41m[m
-[32m+[m[32m        href: '#',[m[41m[m
-[32m+[m[32m      },[m[41m[m
-[32m+[m[32m      {[m[41m[m
-[32m+[m[32m        label: 'Category 2',[m[41m[m
-[32m+[m[32m        subLabel: 'the category two',[m[41m[m
-[32m+[m[32m        href: '#',[m[41m[m
-[32m+[m[32m      },[m[41m[m
-[32m+[m[32m    ],[m[41m[m
-[32m+[m[32m  },[m[41m[m
-[32m+[m[32m][m[41m[m
-[1mdiff --git a/client/package.json b/client/package.json[m
-[1mindex 7f7cb16..2b60ced 100644[m
-[1m--- a/client/package.json[m
-[1m+++ b/client/package.json[m
-[36m@@ -3,7 +3,7 @@[m
-   "version": "0.1.0",[m
-   "private": true,[m
-   "scripts": {[m
-[31m-    "dev": "next dev",[m
-[32m+[m[32m    "dev": "next dev -p 8080",[m
-     "build": "next build",[m
-     "start": "next start",[m
-     "lint": "next lint"[m

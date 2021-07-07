@@ -6,13 +6,15 @@
     "dev": "next dev -p 8080",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "e2e": "cypress open"
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.0.13",
     "@chakra-ui/react": "^1.6.4",
     "@emotion/react": "11",
     "@emotion/styled": "11",
+    "@sanity/image-url": "^0.140.22",
     "@supabase/supabase-js": "^1.17.0",
     "classnames": "^2.3.1",
     "framer-motion": "4",
@@ -25,6 +27,7 @@
     "react-slick": "^0.28.1"
   },
   "devDependencies": {
+    "cypress": "^7.6.0",
     "eslint": "7.29.0",
     "eslint-config-next": "11.0.0"
   }

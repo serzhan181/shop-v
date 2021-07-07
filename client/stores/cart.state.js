@@ -15,12 +15,20 @@ class Cart {
             return
         }
 
-        item.count = 0
+        item.count = 1
         this.items.push(item)
     }
 
     getItem = (id) => {
         return this.items.find(item => item.id === id)
+    }
+
+    get itemsLength() {
+        return this.items.reduce((acc, item) => {
+            acc += item.count
+
+            return acc
+        }, 0)
     }
 }
 
