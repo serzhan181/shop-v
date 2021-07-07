@@ -9,14 +9,12 @@ import { products } from '../mockData/promotedProducts.js'
 import Cards from '@/components/cards'
 
 const sliderSettings = {
-  dots: false,
+  dots: true,
   infinite: true,
   speed: 500,
   slidesToShow: 2,
   slidesToScroll: 1,
-  autoplay: true,
   centerMode: true,
-  pauseOnHover: true,
   responsive: [
     {
       breakpoint: 600,

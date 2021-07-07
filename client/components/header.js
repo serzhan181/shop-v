@@ -36,7 +36,7 @@ export default function Header() {
   const { user } = useAuth()
 
   return (
-    <Box position='fixed' top='0' zIndex='1000' w='100%' height='sm'>
+    <Box position='fixed' top='0' zIndex='1000' w='100%' height={'56px'}>
       <motion.div
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}

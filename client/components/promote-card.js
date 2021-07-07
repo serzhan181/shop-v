@@ -15,6 +15,7 @@ export default function PromoteCard() {
       bg='white'
       borderRadius='md'
       p='5'
+      zIndex={100}
     >
       <Flex w='50%' alignItems='center' flexDir='column' mr='3'>
         <Flex
