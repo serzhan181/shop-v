@@ -5,6 +5,7 @@ import { getSanityImg } from '@/helpers/getSanityImg'
 import Slider from 'react-slick'
 import Image from 'next/image'
 import { MotionBox } from '@/components/common'
+import { products } from '@/stores/products.state'
 
 const sliderSettings = {
   infinite: false,
@@ -72,7 +73,10 @@ const Field = ({ image, title, slug, selectedField, setSelectedField }) => {
             <Link
               _hover={{ textDecor: 'underline' }}
               cursor='pointer'
-              onClick={() => setSelectedField(title)}
+              onClick={() => {
+                setSelectedField(title)
+                products.selectedCategory = slug
+              }}
               fontSize='xs'
               fontWeight='bold'
               textAlign='center'

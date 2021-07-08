@@ -1,7 +1,9 @@
-import { Circle, Tag as ChakraTag, TagLabel } from '@chakra-ui/react'
+import { Tag as ChakraTag, TagLabel } from '@chakra-ui/react'
 import Image from 'next/image'
 
-export const Tag = ({ title, leftIcon, externalLink, ...restProps }) => {
+export const Tag = ({ title, leftIcon, ...restProps }) => {
+
+
   return (
     <ChakraTag variant='subtle' colorScheme='gray' {...restProps}>
       <TagLabel title={title}>
