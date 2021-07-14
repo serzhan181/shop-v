@@ -29,9 +29,7 @@ const sliderSettings = {
 // TODO make so that selectedField will have an id instead of title.
 
 export default function Categories() {
-  const [selectedField, setSelectedField] = useState(
-    mockCategories.result[0].title
-  )
+  const [selectedField, setSelectedField] = useState(products.selectedCategory)
   return (
     <Flex flexDir='column'>
       <Slider {...sliderSettings}>
